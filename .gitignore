@@ -1,0 +1,49 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Virtual environments
+.venv/
+env/
+venv/
+ENV/
+
+# PyTorch & HuggingFace caches
+cache/
+.cache/
+hf_home/
+checkpoints/
+*.pt
+*.bin
+*.safetensors
+
+# Benchmark run artifacts and logs
+experiments/
+*.jsonl
+summary_report.json
+summary_report.csv
+tuned_config.json
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.ruff_cache/
+.mypy_cache/
+
+# Environment files
+.env
+.env.*

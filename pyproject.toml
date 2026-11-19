@@ -1,0 +1,104 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "blinkthink"
+version = "1.1.0"
+description = "Calibrated Dual-Process Routing for Open-Weight Language Models"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [
+    { name = "Gabor Petnehazi", email = "gabor.petnehazi@rebuildai.co.uk" }
+]
+keywords = [
+    "llm",
+    "decision-making",
+    "dual-process",
+    "calibration",
+    "system-1-system-2",
+    "transformers",
+    "routing",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+# Core dependencies needed for local inference & remote clients
+dependencies = [
+    "torch>=2.0.0",
+    "transformers>=4.40.0",
+    "pydantic>=2.0.0",
+    "httpx>=0.24.0",
+    "numpy>=1.24.0",
+    "scipy>=1.10.0",
+]
+
+[project.optional-dependencies]
+# 4-bit / 8-bit quantized execution
+quantization = [
+    "bitsandbytes>=0.43.0",
+    "accelerate>=0.26.0",
+]
+
+# Serving the FastAPI decision service
+server = [
+    "fastapi>=0.100.0",
+    "uvicorn[standard]>=0.20.0",
+    "accelerate>=0.26.0",
+    "bitsandbytes>=0.43.0",
+]
+
+# Running benchmark study suites (run_study.py)
+benchmarks = [
+    "datasets>=2.14.0",
+    "pandas>=2.0.0",
+    "tqdm>=4.65.0",
+    "accelerate>=0.26.0",
+    "bitsandbytes>=0.43.0",
+]
+
+# Testing & development tooling
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "ruff>=0.1.0",
+    "mypy>=1.5.0",
+    "fastapi>=0.100.0",
+]
+
+# Full runtime features (server + benchmarks + quantization)
+all = [
+    "fastapi>=0.100.0",
+    "uvicorn[standard]>=0.20.0",
+    "datasets>=2.14.0",
+    "pandas>=2.0.0",
+    "tqdm>=4.65.0",
+    "accelerate>=0.26.0",
+    "bitsandbytes>=0.43.0",
+]
+
+[project.scripts]
+blinkthink-serve = "blinkthink.server:run_server"
+
+[project.urls]
+Homepage = "https://github.com/RebuildAI-UK/blinkthink"
+Documentation = "https://github.com/RebuildAI-UK/blinkthink#readme"
+Repository = "https://github.com/RebuildAI-UK/blinkthink.git"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["blinkthink*"]
+exclude = ["tests*", "docs*", "examples*"]
+
+[tool.setuptools.package-data]
+blinkthink = ["py.typed"]
