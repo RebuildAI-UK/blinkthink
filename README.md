@@ -1,6 +1,7 @@
 # BlinkThink
 
 [![PyPI version](https://img.shields.io/pypi/v/blinkthink.svg)](https://pypi.org/project/blinkthink/)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24406872.svg)](https://doi.org/10.5281/zenodo.24406872)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue)](https://www.python.org/)
 [![Pydantic](https://img.shields.io/badge/Pydantic-v2-green)](https://pydantic.dev/)
@@ -166,16 +167,17 @@ python benchmarks/run_study_matrix.py
 
 ## Citation
 
-If you use BlinkThink in your research, please cite:
+If you use BlinkThink in your research, please cite our preprint:
 
 ```bibtex
-@article{petnehazi2026blinkthink,
+@misc{petnehazi2026blinkthink,
   title={BlinkThink: Training-Free Calibrated Dual-Process Routing for Discrete LLM Decisions},
   author={Petnehazi, Gabor},
   year={2026},
-  url={https://github.com/RebuildAI-UK/blinkthink}
+  publisher={Zenodo},
+  doi={10.5281/zenodo.24406872},
+  url={https://doi.org/10.5281/zenodo.24406872}
 }
-```
 
 ---
 
