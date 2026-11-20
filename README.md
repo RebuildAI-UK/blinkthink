@@ -178,6 +178,7 @@ If you use BlinkThink in your research, please cite our preprint:
   doi={10.5281/zenodo.24406872},
   url={https://doi.org/10.5281/zenodo.24406872}
 }
+```
 
 ---
 
